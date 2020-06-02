@@ -26,8 +26,7 @@ public class TestMain {
 				
 		//Obtiene un servicio
 		ServiceA myService = locator.getService(ServiceA.class);
-				
-		
+						
 		myService.saludar();
 		
 		myService.testScopes();
@@ -37,10 +36,7 @@ public class TestMain {
 		System.out.println("Locator: ");
 		ServiceLocatorUtilities.dumpAllDescriptors(locator);
 		
-		
-
-
-		
+				
 	}
 
 }

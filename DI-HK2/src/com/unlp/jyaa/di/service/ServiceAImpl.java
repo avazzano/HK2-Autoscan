@@ -27,30 +27,30 @@ public class ServiceAImpl implements ServiceA {
 	
 	
 	@Inject
-	private ServiceC c1Singleton;
+	private ServiceC singletonA;
 	
 	@Inject
-	private ServiceC c2Singleton;
+	private ServiceC singletonB;
 	
 	@Inject
-	@Named("ServiceC1Impl")
-	private ServiceC c1PerLook;
+	private ServiceD perLookupA;
+	
+//	@Inject
+	private ServiceD perLookupB;
+
+	@Inject
+	private ServiceE perThreadA;
+	
+//	@Inject
+	private ServiceE perThreadB;
+	
 	
 	@Inject
-	@Named("ServiceC1Impl")
-	private ServiceC c2PerLook;
-	
-	
-	@Inject
-	@Named("ServiceC2Impl")
-	private ServiceC c1PerThread;
-	
-	@Inject
-	@Named("ServiceC2Impl")
-	private ServiceC c2PerThread;
-	
-	
-	
+	public ServiceAImpl(ServiceE perThreadB, ServiceD perLookupB) {
+		this.perThreadB=perThreadB;
+		this.perLookupB=perLookupB;
+		
+	}
 	
 	@PostConstruct
 	public void postConstruct() {
@@ -72,17 +72,14 @@ public class ServiceAImpl implements ServiceA {
 	
 	public void testScopes() {
 		
-		System.out.println("Compara Singletons " + (c1Singleton == c2Singleton) );
+		System.out.println("Compara Singletons " + (singletonA == singletonB) );
 		
-		System.out.println("Compara PerLookUP " + (c1PerLook == c2PerLook));
+		System.out.println("Compara PerLookUP " + (perLookupA == perLookupB));
 		
-		System.out.println("Compara PerThread " + (c1PerThread == c2PerThread));
+		System.out.println("Compara PerThread " + (perThreadA == perThreadB));
 		
 
 	}
-	
-	
-	
 	
 	
 
