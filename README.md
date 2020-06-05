@@ -1,2 +1,3 @@
 # HK2-Examples
--Implementation autoscan of injections for HK2 framework.
+--Dependency injection examples using the framework.
+--Implementing dependency autoscan.
