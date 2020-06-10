@@ -1,1 +1,1 @@
-Implementation autoscan of injections for HK2 framework.
+Implementation autoscan of dependencies for HK2 framework.
